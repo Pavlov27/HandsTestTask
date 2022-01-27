@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nyD-qX-suQ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="wSO-UF-kFK">
+            <objects>
+                <viewController id="nyD-qX-suQ" customClass="ViewController" customModule="HandsTestTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TmX-OF-xVs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eXq-Fd-HNz">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="nyD-qX-suQ" id="oJy-dn-zn0"/>
+                                    <outlet property="delegate" destination="nyD-qX-suQ" id="Cw1-ab-5z4"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yc3-Qy-wo3">
+                                <rect key="frame" x="15" y="810" width="384" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="0lj-47-3Cp"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="СОТВОРИТЬ"/>
+                                <connections>
+                                    <action selector="createButtonDidTapped:" destination="nyD-qX-suQ" eventType="touchUpInside" id="ZxF-0T-Lxa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tYa-bb-pEn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="eXq-Fd-HNz" secondAttribute="bottom" id="5Ce-68-xhK"/>
+                            <constraint firstItem="eXq-Fd-HNz" firstAttribute="top" secondItem="tYa-bb-pEn" secondAttribute="top" id="TDV-fb-y5x"/>
+                            <constraint firstItem="eXq-Fd-HNz" firstAttribute="leading" secondItem="tYa-bb-pEn" secondAttribute="leading" id="eWJ-V8-szS"/>
+                            <constraint firstItem="tYa-bb-pEn" firstAttribute="trailing" secondItem="Yc3-Qy-wo3" secondAttribute="trailing" constant="15" id="opz-2s-VKH"/>
+                            <constraint firstItem="Yc3-Qy-wo3" firstAttribute="leading" secondItem="tYa-bb-pEn" secondAttribute="leading" constant="15" id="pRl-ll-7FU"/>
+                            <constraint firstItem="tYa-bb-pEn" firstAttribute="bottom" secondItem="Yc3-Qy-wo3" secondAttribute="bottom" constant="16" id="pZf-Up-Xbb"/>
+                            <constraint firstItem="tYa-bb-pEn" firstAttribute="trailing" secondItem="eXq-Fd-HNz" secondAttribute="trailing" id="u1C-sQ-OlU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="VYx-Tc-Ahj"/>
+                    <connections>
+                        <outlet property="createButton" destination="Yc3-Qy-wo3" id="UEw-Ol-AWG"/>
+                        <outlet property="tableView" destination="eXq-Fd-HNz" id="srO-fy-vfL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lBB-6w-eqt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1095.6521739130435" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
