@@ -7,9 +7,15 @@
 
 import Foundation
 
+enum UpadteType {
+    case regular
+    case killLife
+    case makeLife
+}
+
 class CellBuilder {
-    func buildCellModels(_ existingModels: [SchrodingerCellModel]) -> [SchrodingerCellModel] {
-        var models = existingModels
+    func buildCellModels(_ models: inout [SchrodingerCellModel]) -> ([SchrodingerCellModel], UpadteType) {
+        var updateState: UpadteType = .regular
         
         models.append(appendNewCell())
         
@@ -22,18 +28,19 @@ class CellBuilder {
                     if models.count > 3 {
                         if models[models.count - 4].type == .life {
                             models[models.count - 4].type = .dead
+                            updateState = .killLife
                         }
                     }
                 case .alive:
                     models.append(SchrodingerCellModel(type: .life))
-                    return models
+                    return (models, .makeLife)
                 case .life:
                     break
                 }
             }
         }
         
-        return models
+        return (models, updateState)
     }
     
     private func appendNewCell() -> SchrodingerCellModel {
